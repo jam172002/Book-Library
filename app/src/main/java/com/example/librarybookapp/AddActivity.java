@@ -25,7 +25,7 @@ public class AddActivity extends AppCompatActivity {
                 int pNumber = Integer.parseInt(binding.pNumber.getText().toString().trim());
 
                 DBHelper db = new DBHelper(AddActivity.this);
-                db.addBooks(name, author, pNumber);
+                db.addBooks(AddActivity.this, name, author, pNumber);
             }
         });
     }

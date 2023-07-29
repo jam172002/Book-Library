@@ -39,7 +39,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     }
 
-    public void addBooks(String name, String author,  int pNumber) {
+    public void addBooks(Context context, String name, String author,  int pNumber) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues val = new ContentValues();
@@ -47,6 +47,11 @@ public class DBHelper extends SQLiteOpenHelper {
         val.put(COL_Author, author);
         val.put(COL_NumberOfPages, pNumber);
 
-        db.insert(TABLE_NAME, null, val);
+        long res = db.insert(TABLE_NAME, null, val);
+        if(res == -1){
+            Toast.makeText(context, "Failed to Add Data", Toast.LENGTH_SHORT).show();
+        }else {
+            Toast.makeText(context, "Book Data Successfully Added", Toast.LENGTH_SHORT).show();
+        }
     }
 }
