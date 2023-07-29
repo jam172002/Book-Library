@@ -13,7 +13,9 @@
         tools:targetApi="31">
         <activity
             android:name=".AddActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".MainActivity"
+            android:label="Add Book"/>
         <activity
             android:name=".Splash"
             android:exported="true">
@@ -25,7 +27,10 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
+            android:exported="true"
+            android:parentActivityName=".MainActivity"
+            android:label="Books">
+        </activity>
     </application>
 
 </manifest>
